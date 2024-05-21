@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('/static/image1.jpg') center/cover no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark translucent overlay */
+    color: #f0f0f0; /* Light font color for readability */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ffcc00; /* Bright color for headings */
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly translucent form background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form label, form input, form select, form button {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #f0f0f0; /* Form text color */
+}
+
+form input, form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly translucent input background */
+}
+
+form button {
+    padding: 10px;
+    background-color: #ffcc00; /* Button background color */
+    color: #333; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #ff9900; /* Button hover color */
+}
+
+.plan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.week-box {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px;
+    width: calc(25% - 40px); /* Adjust width to fit 4 columns */
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark translucent background for week boxes */
+    color: #f0f0f0; /* Text color for week boxes */
+    border-radius: 8px;
+}
+
+.session-box {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 10px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker translucent background for session boxes */
+    border-radius: 4px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #ff9900;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgba(0, 0, 0, 0.5) url("{{ url_for('static', filename='image1.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .plan-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .week {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .session {
+            margin: 4px 0;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: bold;
+            word-wrap: break-word;
+            white-space: pre-wrap;  /* Preserve newlines */
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Training Plan</h1>
+    <div class="plan-container">
+        {% for week_plan in plan %}
+        <div class="week">
+            <h2>Week {{ loop.index }}</h2>
+            {% for session in week_plan %}
+            <div class="session">
+                <p><strong>Date: {{ session.date }}</strong></p>
+                {% if session.session == 'Rest Day' %}
+                <p><strong>Session Type: Rest Day:</strong></p>
+                    <div class="rest-day">
+                        <a href="https://gifer.com/en/OQaF" target="_blank">
+                            <img src="https://i.gifer.com/OQaF.gif" alt="Resting">
+                        </a>
+                    </div>
+                {% else %}
+                    <p><strong>Session Type: {{ session.session }}</strong></p>
+                    <p><strong>Warmup: {{ session.warmup }}</strong><br><strong>********Main Session********<br>{{ session.main_session }}</strong></p>
+                    <p><strong>Cooldown: {{ session.cooldown }}</strong></p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <form action="/" method="get">
+        <button class="btn">Create Another Plan</button>
+    </form>
+</body>
+</html>
